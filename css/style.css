@@ -1,0 +1,17 @@
+.section {
+    width: 100%;
+    position: relative;
+  height: 100vh;
+}
+
+#Section1 {
+    background: red;
+}
+
+#Section2 {
+    background: blue;
+}
+
+#Section3 {
+    background: orange;
+}
