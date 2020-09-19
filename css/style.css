@@ -1,7 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
 .section {
     width: 100%;
     position: relative;
-  height: 100vh;
+ height: 100vh;
 }
 
 #Section1 {
@@ -15,3 +22,5 @@
 #Section3 {
     background: orange;
 }
+
+
