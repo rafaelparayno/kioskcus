@@ -32,20 +32,17 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                         Users
                     </a>
-
-
-
                     <a class="nav-link" href="./course.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                        Courses
+                        Containers
                     </a>
                     <a class="nav-link" href="./strands.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                        Strand
+                        Precaution
                     </a>
                     <a class="nav-link" href="./subjects.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                        Subjects
+                        Videos
                     </a>
 
                 </div>

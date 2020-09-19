@@ -102,7 +102,7 @@ class User
                 $_SESSION['user'] = $username;
                 $_SESSION['id'] = $args['acc_id'];
                 $_SESSION['lvl'] = $args['userole'];
-                header("Location:" . './pages/Users.php');
+                header("Location:" . './pages/dashboard.php');
             }
         }
     }
