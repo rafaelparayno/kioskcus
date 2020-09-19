@@ -1,6 +1,10 @@
+<?php
+?>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Montessori</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href=""><i class="fas fa-bars"></i></button><!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
 
+    </form>
     <!-- Navbar-->
     <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown">
@@ -13,7 +17,6 @@
         </li>
     </ul>
 </nav>
-
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -29,11 +32,22 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                         Users
                     </a>
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudents" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Students
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+
+
+
+                    <a class="nav-link" href="./course.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Courses
                     </a>
+                    <a class="nav-link" href="./strands.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Strand
+                    </a>
+                    <a class="nav-link" href="./subjects.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Subjects
+                    </a>
+
                 </div>
             </div>
             <div class="sb-sidenav-footer">

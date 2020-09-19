@@ -1,5 +1,12 @@
 <?php
 include('templates/header.php');
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_POST['loginSumb'])) {
+        $users->login($_POST['username'], $_POST['password']);
+    }
+    $log = true;
+}
 ?>
 
 <main>
@@ -8,7 +15,11 @@ include('templates/header.php');
         <div class="m-5">
             <form method="post" class="border p-5">
                 <div class="form-group">
-
+                    <?php
+                    if (isset($log)) {
+                    ?>
+                        <div class="text-center" style="color:red">Wrong Password or Username</div>
+                    <?php } ?>
                     <!-- <div class="text-center" style="color:red">Wrong Password or Username</div> -->
 
                     <label for="exampleInputEmail1">Username</label>
