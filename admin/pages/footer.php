@@ -16,6 +16,11 @@
         var userid = $(e.relatedTarget).data('deluserid');
         $(e.currentTarget).find('input[name="userIdDelete"]').val(userid);
     });
+
+    $('#deleteCon').on('show.bs.modal', function(e) {
+        var conid = $(e.relatedTarget).data('delid');
+        $(e.currentTarget).find('input[name="conIdDelete"]').val(conid);
+    });
 </script>
 </body>
 

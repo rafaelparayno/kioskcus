@@ -32,7 +32,7 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                         Users
                     </a>
-                    <a class="nav-link" href="./course.php">
+                    <a class="nav-link" href="./containers.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Containers
                     </a>
