@@ -36,14 +36,14 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Containers
                     </a>
-                    <a class="nav-link" href="./strands.php">
+                    <a class="nav-link" href="./precautions.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Precaution
                     </a>
-                    <a class="nav-link" href="./subjects.php">
+                    <!-- <a class="nav-link" href="./subjects.php">
                         <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                         Videos
-                    </a>
+                    </a> -->
 
                 </div>
             </div>

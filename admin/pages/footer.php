@@ -21,6 +21,11 @@
         var conid = $(e.relatedTarget).data('delid');
         $(e.currentTarget).find('input[name="conIdDelete"]').val(conid);
     });
+
+    $('#deleteMes').on('show.bs.modal', function(e) {
+        var conid = $(e.relatedTarget).data('preid');
+        $(e.currentTarget).find('input[name="preDelid"]').val(conid);
+    });
 </script>
 </body>
 

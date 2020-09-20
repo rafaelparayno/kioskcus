@@ -1,35 +1,35 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-/* body{
-    background-color: ;
-} */
-
-.display-clock{
-    background-color: green;
-    height: 70px;
-  
-    position:sticky;
-    top:0;
-    width:100%;
-    z-index:100;
+body {
+  background-color: #514f59;
 }
 
-.clock{
+.display-clock {
+  background-color: green;
+  height: 70px;
+
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.clock {
   text-align: center;
   font-size: 3.25rem;
 }
 
 .section {
-    width: 100%;
-    position: relative;
-    height: 90vh;
+  width: 100%;
+  position: relative;
+  height: 90vh;
 }
 
-#Section1 {
+/* #Section1 {
     background: pink;
 }
 
@@ -39,8 +39,4 @@
 
 #Section3 {
     background: violet;
-}
-
-
-
-
+} */
