@@ -22,8 +22,9 @@ let nextSection = "";
 
     currentSection = `#Section${count}`;
     nextSection = `#Section${index}`;
-    goTo(nextSection);
     index++;
+    goTo(nextSection);
+
 
     if (currentSection === nextSection) {
         count++;

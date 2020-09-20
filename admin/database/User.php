@@ -53,15 +53,13 @@ class User
         }
     }
 
-    public function addToUsers($accid, $username, $role, $password)
+    public function addToUsers($username, $password)
     {
 
         $crppypass =  password_hash($password, PASSWORD_DEFAULT);
         $params = array(
             'username' => "'{$username}'",
             'password' => "'{$crppypass}'",
-            'userole' => $role,
-            'acc_id' => "'{$accid}'",
         );
 
         $this->insertData($params);

@@ -1,6 +1,29 @@
 <?php
 include('header.php');
 include('navigation.php');
+
+$usersList = $users->getData();
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+    if (isset($_POST['saveUserAdmin'])) {
+        $username = $_POST['adminuser'];
+        $passwordStud = $_POST['passwordAdmin'];
+        $users->addToUsers(
+            $passwordStud,
+            $username,
+            1,
+            $passwordStud
+        );
+        echo "<script>window.location='/kiosk/admin/pages/users.php';</script>";
+    }
+
+    if (isset($_POST['resetPassword'])) {
+        $id = $_POST['useridModalReset'];
+        $password = $users->resetPassword($id);
+        // echo "<script>window.location='/mpc/system/pages/users.php';</script>";
+    }
+}
 ?>
 <main>
     <div class="container-fluid">
@@ -22,7 +45,7 @@ include('navigation.php');
                         <thead>
                             <tr>
 
-                                <th>Account ID</th>
+
                                 <th>User name</th>
 
                                 <th>Action</th>
@@ -32,7 +55,7 @@ include('navigation.php');
                         <tfoot>
                             <tr>
 
-                                <th>Account ID</th>
+
                                 <th>User name</th>
 
                                 <th>Action</th>
@@ -41,23 +64,26 @@ include('navigation.php');
                         </tfoot>
                         <tbody>
 
-                            <!-- <?php array_map(function ($user) { ?>
+                            <?php array_map(function ($user) { ?>
                                 <tr>
-                                    <td><?= $user['acc_id'] ?></td>
+
                                     <td><?= $user['username'] ?></td>
-                                   
+
 
 
 
 
                                     <td>
-                                        <button data-toggle="modal" data-target="#resetPassword" data-userid="<?php echo $user['user_id']; ?>" href="" class="btn btn-block btn-info">
+                                        <button data-toggle="modal" data-target="#resetPassword" data-userid="<?php echo $user['user_id']; ?>" href="" class="btn btn-md btn-info">
                                             Reset Password
                                         </button>
+                                        <button data-toggle="modal" data-target="#deleteuser" data-deluserid="<?php echo $user['user_id']; ?>" href="" class="btn btn-md btn-danger">
+                                            Delete User
+                                        </button>
                                         <!-- <a class="btn btn-block btn-info" href="./evaluation.php?sno=<?= $user['sno'] ?>">Reset Password</a> -->
-                            </td>
-                            </tr>
-                        <?php }, $usersList) ?> -->
+                                    </td>
+                                </tr>
+                            <?php }, $usersList) ?>
 
 
                         </tbody>
@@ -80,15 +106,15 @@ include('navigation.php');
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <label for="adminuser">Admin Username</label>
-                            <input type="text" name="adminuser" id="adminuser" />
+                            <label for="adminuser">Username</label>
+                            <input type="text" class="form-control" name="adminuser" id="adminuser" />
 
                             <!-- <input type="text" name="Course" class="form-control" id="Course" placeholder="Course"> -->
                         </div>
                         <div class="form-group">
                             <label for="password">Generated Password</label>
-                            <input type="text" name="passwordAdmin" id="generatedPassAdmin" />
-                            <button type="button" class="btn btn-md btn-info mt-2" id="generatePass2">Generate Password</button>
+                            <input type="text" class="form-control" name="passwordAdmin" id="generatedPassAdmin" />
+
                             <!-- <input type="text" name="Course" class="form-control" id="Course" placeholder="Course"> -->
                         </div>
 
@@ -100,6 +126,55 @@ include('navigation.php');
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                 </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="resetPassword" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Reset Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to Reset selected User Password ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="useridModalReset" value="">
+                        <button type="Submit" name="resetPassword" class="btn btn-primary">Reset Password</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="deleteuser" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Delete User</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to Delete selected User ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="userIdDelete" value="">
+                        <button type="Submit" name="userDelete" class="btn btn-primary">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
                 </form>
             </div>
         </div>

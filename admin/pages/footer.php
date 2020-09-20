@@ -6,7 +6,17 @@
 
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script>
+    $('#resetPassword').on('show.bs.modal', function(e) {
+        var userid = $(e.relatedTarget).data('userid');
+        $(e.currentTarget).find('input[name="useridModalReset"]').val(userid);
+    });
 
+    $('#deleteuser').on('show.bs.modal', function(e) {
+        var userid = $(e.relatedTarget).data('deluserid');
+        $(e.currentTarget).find('input[name="userIdDelete"]').val(userid);
+    });
+</script>
 </body>
 
 
