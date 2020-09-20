@@ -5,11 +5,11 @@
 }
 
 body {
-  background-color: #514f59;
+  background-color: #0e0f19;
 }
 
 .display-clock {
-  background-color: green;
+  background-color: #466060;
   height: 70px;
 
   position: sticky;
@@ -20,6 +20,7 @@ body {
 
 .clock {
   text-align: center;
+  color: white;
   font-size: 3.25rem;
 }
 
