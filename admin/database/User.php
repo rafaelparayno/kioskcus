@@ -25,6 +25,13 @@ class User
         return $resultArray;
     }
 
+    public function deleteUser($userid)
+    {
+        $result = $this->db->con->query("DELETE FROM users WHERE users_id  = {$userid}");
+
+        echo $userid;
+    }
+
 
     public function confirmUser($sno, $ead, $password)
     {

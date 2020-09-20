@@ -23,9 +23,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $password = $users->resetPassword($id);
         // echo "<script>window.location='/mpc/system/pages/users.php';</script>";
     }
+
+    if (isset($_POST['userDelete'])) {
+        $id = $_POST['userIdDelete'];
+
+        $users->deleteUser($id);
+        echo "<script>window.location='/kiosk/admin/pages/users.php';</script>";
+    }
 }
 ?>
 <main>
+    <?php if (isset($password)) { ?>
+        <div class="text-center text-info display-4">New Password for the user : <?= $password ?></div>
+    <?php   } ?>
     <div class="container-fluid">
         <h1 class="mt-4">Users</h1>
         <ol class="breadcrumb mb-4">
@@ -44,22 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-
-
                                 <th>User name</th>
-
                                 <th>Action</th>
-
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-
-
                                 <th>User name</th>
-
                                 <th>Action</th>
-
                             </tr>
                         </tfoot>
                         <tbody>
@@ -69,15 +71,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                                     <td><?= $user['username'] ?></td>
 
-
-
-
-
                                     <td>
-                                        <button data-toggle="modal" data-target="#resetPassword" data-userid="<?php echo $user['user_id']; ?>" href="" class="btn btn-md btn-info">
+                                        <button data-toggle="modal" data-target="#resetPassword" data-userid="<?php echo $user['users_id']; ?>" href="" class="btn btn-md btn-info">
                                             Reset Password
                                         </button>
-                                        <button data-toggle="modal" data-target="#deleteuser" data-deluserid="<?php echo $user['user_id']; ?>" href="" class="btn btn-md btn-danger">
+                                        <button data-toggle="modal" data-target="#deleteuser" data-deluserid="<?php echo $user['users_id']; ?>" href="" class="btn btn-md btn-danger">
                                             Delete User
                                         </button>
                                         <!-- <a class="btn btn-block btn-info" href="./evaluation.php?sno=<?= $user['sno'] ?>">Reset Password</a> -->
