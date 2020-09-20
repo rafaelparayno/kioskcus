@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </div>
             <div class="card-body">
                 <div class="d-flex mb-3">
-                    <button data-toggle="modal" data-target="#addPreMessage" class="btn btn-lg btn-success">Precautions</button>
+                    <button data-toggle="modal" data-target="#addPreMessage" class="btn btn-lg btn-success">Add Precautions</button>
                 </div>
                 <div class="table-responsive">
 

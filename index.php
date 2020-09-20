@@ -15,14 +15,14 @@
 <body>
 
     <div class="display-clock ">
-        <div class="clock">
-            asdadasdadasd
+        <div id="MyClockDisplay" class="clock">
+
         </div>
     </div>
     <section style="padding-top: 80px;" id="Section1" class="section text-light">
         <div class="container-fluid">
             <div class="table-responsive">
-                <table class="table table-dark table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table style="font-size: 1.25rem;" class="table  table-dark table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Container Number</th>
@@ -49,7 +49,18 @@
             </div>
         </div>
     </section>
-    <section id="Section2" class="section"></section>
+    <section id="Section2" class="section">
+
+        <div class="jumbotron">
+            <h1 class="display-2">Covid Precautions.</h1>
+            <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
+            <hr class="my-4">
+            <div class="display-4" id="precautions">
+
+            </div>
+
+        </div>
+    </section>
     <section id="Section3" class="section">
         <div class="fb-video" data-href="https://www.facebook.com/BureauOfCustomsPH/videos/1006449776475095/" data-width="1200" data-autoplay="true" data-show-text="false">
             <div class="fb-xfbml-parse-ignore">

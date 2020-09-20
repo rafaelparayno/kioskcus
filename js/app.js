@@ -56,57 +56,57 @@ function load() {
       },
       complete: load,
     });
-  }, 5000);
+  }, 10000);
 }
 load();
 
-// $('#searchBtnCurriculim').on('click', () => {
-//     let code = $('#searchCourseCur').val();
+function load2() {
+  setTimeout(function () {
+    $.ajax({
+      type: "post",
+      url: "ajax.php",
+      data: {
+        searchCode2: 1,
+      },
+      success: function (result) {
+        var obj = jQuery.parseJSON(result);
+        $("#precautions").empty();
+        for (var key in obj) {
+          var val = obj[key];
+          $("#precautions").append(`<p>${val.precaution_msg}</p>`);
+        }
+      },
+      complete: load2,
+    });
+  }, 10000);
+}
+load2();
 
-//     $.ajax({
-//         type: "post",
-//         url: "Students/ajax.php",
-//         data: {
-//             searchCode: code,
-//         },
-//         success: function(data) {
-//             var obj = jQuery.parseJSON(data);
+function showTime() {
+  var date = new Date();
+  var h = date.getHours();
+  var m = date.getMinutes();
+  var s = date.getSeconds();
+  var session = "AM";
 
-//             $("#table3Cur").empty();
-//             $("#table2Cur").empty();
-//             $("#table1Cur").empty();
-//             for (var key in obj) {
-//                 var val = obj[key];
-//                 if (val.subyr == 1) {
-//                     $('#table1Cur').append(`<tr>
-//                             <td>${val.subjectcode}</td>
-//                             <td>${val.subjectname}</td>
-//                             <td>${val.subject_units}</td>
-//                             <td>${val.schoolterm}</td>
-//                         </tr>`)
-//                 }
-//                 if (val.subyr == 2) {
-//                     $('#table2Cur').append(`<tr>
-//                             <td>${val.subjectcode}</td>
-//                             <td>${val.subjectname}</td>
-//                             <td>${val.subject_units}</td>
-//                             <td>${val.schoolterm}</td>
-//                         </tr>`)
-//                 }
+  if (h == 0) {
+    h = 12;
+  }
+  if (h > 12) {
+    h = h - 12;
+    session = "PM";
+  }
 
-//                 if (val.subyr == 3) {
-//                     $('#table3Cur').append(`<tr>
-//                             <td>${val.subjectcode}</td>
-//                             <td>${val.subjectname}</td>
-//                             <td>${val.subject_units}</td>
-//                             <td>${val.schoolterm}</td>
-//                         </tr>`)
-//                 }
+  h = h < 10 ? "0" + h : h;
+  m = m < 10 ? "0" + m : m;
+  s = s < 10 ? "0" + s : s;
 
-//             }
+  var time = h + ":" + m + ":" + s + " " + session;
 
-//         }
+  document.getElementById("MyClockDisplay").innerText = time;
+  document.getElementById("MyClockDisplay").textContent = time;
 
-//     });
+  setTimeout(showTime, 1000);
+}
 
-// });
+showTime();

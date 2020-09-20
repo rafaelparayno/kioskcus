@@ -2,61 +2,24 @@
 
 require('./admin/database/DbController.php');
 require('./admin/database/Container.php');
+require('./admin/database/Precaution.php');
 
 $db = new DBController();
 
 $container = new Container($db);
-
-// if (isset($_POST['coursesid'])) {
-//     $schoolYearArgs = $schoolYear->schoolYear();
-//     $semList = $sem->getSemActivate();
-
-//     $syids = $schoolYearArgs['sy_id'];
-
-//     $results = $section->getDataSearchCourse($syids, $semList['semid'], $_POST['coursesid']);
-//     echo json_encode($results);
-// }
-
-// if (isset($_POST['sectionyr'])) {
-//     $schoolYearArgs = $schoolYear->schoolYear();
-//     $semList = $sem->getSemActivate();
-
-//     $syids = $schoolYearArgs['sy_id'];
-
-//     $results = $section->getDataSearchYearlvl($syids, $semList['semid'], $_POST['sectionyr']);
-//     echo json_encode($results);
-// }
-
-// if (isset($_POST['studentSno'])) {
-
-
-//     $results = $personal->getDatabySearching('sno', $_POST['studentSno']);
-//     echo json_encode($results);
-// }
-
-// if (isset($_POST['toMessage'])) {
-//     $userRole = $_POST['userole'];
-//     $results = $user->getDataSearchLike($_POST['toMessage'], $userRole);
-//     // $results = 
-//     echo json_encode($results);
-// }
-
-// if (isset($_POST['studentSnoGrade'])) {
-//     $schoolYearArgs = $schoolYear->schoolYear();
-//     $semList = $sem->getSemActivate();
-
-//     $syids = $schoolYearArgs['sy_id'];
-
-//     // $userRole = $_POST['userole'];
-//     $results = $studentGrade->getData($syids, $semList['semid'], $_POST['studentSnoGrade']);
-//     // // $results = 
-//     echo json_encode($results);
-// }
+$cautions = new Precaution($db);
 
 
 if (isset($_POST['searchCode'])) {
     // $userRole = $_POST['userole'];
     $results = $container->getData();
+    // // $results = 
+    echo json_encode($results);
+}
+
+if (isset($_POST['searchCode2'])) {
+    // $userRole = $_POST['userole'];
+    $results = $cautions->getData();
     // // $results = 
     echo json_encode($results);
 }
