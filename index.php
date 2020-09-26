@@ -14,41 +14,36 @@
 
 <body>
 
-    <div class="display-clock ">
+    <div class="display-clock">
         <div id="MyClockDisplay" class="clock">
-
         </div>
+        <img src="img/xrn.png" alt="">
+        <img src="img/dit.png" alt="">
+        <img src="img/boc.png" alt="">
     </div>
-    <section style="padding-top: 80px;" id="Section1" class="section text-light">
-        <div class="container-fluid">
-            <div class="table-responsive">
-                <table style="font-size: clamp(1.5rem, 2.5vw, 4rem);" class="table  table-dark table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Container Number</th>
-                            <th>Consignee</th>
-                            <th>Broker</th>
-                            <th>Status</th>
+    <section id="Section1" class="section">
 
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Container Number</th>
-                            <th>Consignee</th>
-                            <th>Broker</th>
-                            <th>Status</th>
+        <div id="contain">
+            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
 
-                        </tr>
-                    </tfoot>
-                    <tbody id="tableContainer">
+                        <th>Container Number</th>
+                        <th>Consignee</th>
+                        <th>Broker</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+
+                <tbody id="tableContainer">
 
 
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
         </div>
     </section>
+
     <section id="Section2" class="section">
 
         <div class="jumbotron">
@@ -60,6 +55,7 @@
             </div>
 
         </div>
+
     </section>
 
 

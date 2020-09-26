@@ -1,7 +1,7 @@
 function goTo(selector, cb) {
-  var $el = $(selector);
+  const $el = $(selector);
   if (!$el[0]) return;
-  var $par = $el.parent();
+  let $par = $el.parent();
   if ($par.is("body")) $par = $("html, body");
   setTimeout(() => {
     $par
@@ -42,15 +42,15 @@ function load() {
         searchCode: 1,
       },
       success: function (result) {
-        var obj = jQuery.parseJSON(result);
+        const obj = jQuery.parseJSON(result);
         $("#tableContainer").empty();
-        for (var key in obj) {
-          var val = obj[key];
+        for (let key in obj) {
+          let val = obj[key];
           $("#tableContainer").append(`<tr>
-                                    <td>${val.container_number}</td>
+                                    <td >${val.container_number}</td>
                                     <td>${val.consignee}</td>
-                                    <td>${val.broker}</td>
-                                    <td>${val.status}</td>
+                                    <td >${val.broker}</td>
+                                    <td >${val.status}</td>
                                 </tr>`);
         }
       },
@@ -69,10 +69,10 @@ function load2() {
         searchCode2: 1,
       },
       success: function (result) {
-        var obj = jQuery.parseJSON(result);
+        let obj = jQuery.parseJSON(result);
         $("#precautions").empty();
-        for (var key in obj) {
-          var val = obj[key];
+        for (let key in obj) {
+          let val = obj[key];
           $("#precautions").append(`<p>${val.precaution_msg}</p>`);
         }
       },
@@ -82,11 +82,32 @@ function load2() {
 }
 load2();
 
+function getmonthName(dt) {
+  mlist = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return mlist[dt.getMonth()];
+}
+
 function showTime() {
   var date = new Date();
   var h = date.getHours();
   var m = date.getMinutes();
   var s = date.getSeconds();
+  let month = getmonthName(date);
+  let day = date.getDate();
+  let year = date.getFullYear();
   var session = "AM";
 
   if (h == 0) {
@@ -101,7 +122,20 @@ function showTime() {
   m = m < 10 ? "0" + m : m;
   s = s < 10 ? "0" + s : s;
 
-  var time = h + ":" + m + ":" + s + " " + session;
+  var time =
+    month +
+    " " +
+    day +
+    "," +
+    year +
+    " " +
+    h +
+    ":" +
+    m +
+    ":" +
+    s +
+    " " +
+    session;
 
   document.getElementById("MyClockDisplay").innerText = time;
   document.getElementById("MyClockDisplay").textContent = time;
@@ -110,3 +144,32 @@ function showTime() {
 }
 
 showTime();
+
+let my_time;
+$(document).ready(function () {
+  pageScroll();
+  $("#contain")
+    .mouseover(function () {
+      clearTimeout(my_time);
+    })
+    .mouseout(function () {
+      pageScroll();
+    });
+});
+
+function pageScroll() {
+  const objDiv = document.getElementById("contain");
+  objDiv.scrollTop = objDiv.scrollTop + 2;
+  if (objDiv.scrollTop + objDiv.offsetHeight >= objDiv.scrollHeight) {
+    objDiv.scrollTop = 0;
+  }
+
+  my_time = setTimeout(pageScroll, 25);
+}
+
+$(function () {
+  $(document).scroll(function () {
+    const $nav = $(".display-clock");
+    $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height() + 100);
+  });
+});
