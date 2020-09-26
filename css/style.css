@@ -29,6 +29,10 @@ body {
   height: 100vh;
 }
 
+.table-design {
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
+}
+
 #section .table {
   font-size: 2.25rem;
 }

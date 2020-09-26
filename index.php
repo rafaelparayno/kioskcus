@@ -22,7 +22,7 @@
     <section style="padding-top: 80px;" id="Section1" class="section text-light">
         <div class="container-fluid">
             <div class="table-responsive">
-                <table style="font-size: 1.25rem;" class="table  table-dark table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table style="font-size: clamp(1.5rem, 2.5vw, 4rem);" class="table  table-dark table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Container Number</th>
@@ -61,19 +61,6 @@
 
         </div>
     </section>
-    <section id="Section3" class="section">
-        <div class="fb-video" data-href="https://www.facebook.com/BureauOfCustomsPH/videos/1006449776475095/" data-width="1200" data-autoplay="true" data-show-text="false">
-            <div class="fb-xfbml-parse-ignore">
-                <blockquote cite="https://www.facebook.com/BureauOfCustomsPH/videos/1006449776475095/">
-                    <a href="https://www.facebook.com/BureauOfCustomsPH/videos/1006449776475095/">How to Share With
-                        Just
-                        Friends</a>
-                    <p>How to share with just friends.</p>
-                    Posted by <a href="https://www.facebook.com/facebook/">Facebook</a> on Friday, December 5, 2014
-                </blockquote>
-            </div>
-        </div>
-    </section>
 
 
 
@@ -83,8 +70,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>t-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 </body>
