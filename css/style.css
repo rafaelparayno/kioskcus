@@ -12,6 +12,13 @@ table {
   table-layout: fixed;
 }
 
+thead {
+  font-size: 1.5vw;
+}
+tbody {
+  font-size: 3vw;
+}
+
 td {
   white-space: normal !important;
   word-wrap: break-word;
@@ -41,8 +48,12 @@ img {
 }
 
 .display-clock.scrolled {
-  background: rgb(222, 192, 222);
+  background: rgb(2, 54, 100);
   transition: background 500ms;
+}
+
+.display-clock.scrolled .clock {
+  color: white;
 }
 
 .clock {
@@ -61,8 +72,16 @@ img {
   height: 100%;
 }
 
+.center-img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 #Section1 {
   padding-top: 120px;
+  /* font-size: 4rem; */
+  /* font-size: clamp(1.5rem, 2.5vw, 4rem); */
 }
 
 #Section2 {
@@ -71,6 +90,5 @@ img {
 
 #contain {
   height: 90%;
-  font-size: clamp(1.5rem, 2.5vw, 4rem);
   overflow-y: scroll;
 }

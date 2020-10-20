@@ -7,6 +7,25 @@
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 <script>
+    (function($) {
+        "use strict";
+
+        // Add active state to sidbar nav links
+        var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+        $("#layoutSidenav_nav .sb-sidenav a.nav-link").each(function() {
+            if (this.href === path) {
+                $(this).addClass("active");
+            }
+        });
+
+        // Toggle the side navigation
+        $("#sidebarToggle").on("click", function(e) {
+            e.preventDefault();
+            $("body").toggleClass("sb-sidenav-toggled");
+        });
+    })(jQuery);
+
+
     $('#resetPassword').on('show.bs.modal', function(e) {
         var userid = $(e.relatedTarget).data('userid');
         $(e.currentTarget).find('input[name="useridModalReset"]').val(userid);

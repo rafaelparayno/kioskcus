@@ -30,7 +30,7 @@ let nextSection = "";
     index = 1;
   }
 
-  setTimeout(scrolls, 10000);
+  setTimeout(scrolls, 20000);
 })();
 
 function load() {
@@ -56,7 +56,7 @@ function load() {
       },
       complete: load,
     });
-  }, 10000);
+  }, 5000);
 }
 load();
 
@@ -164,7 +164,7 @@ function pageScroll() {
     objDiv.scrollTop = 0;
   }
 
-  my_time = setTimeout(pageScroll, 25);
+  my_time = setTimeout(pageScroll, 50);
 }
 
 $(function () {
